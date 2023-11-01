@@ -1,0 +1,101 @@
+.services {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+
+  &__left-column {
+    width: 570px;
+  }
+
+  &__right-column {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    max-width: 484px;
+    margin-bottom: 100px;
+  }
+
+  &__card-receive {
+    margin-left: 85px;
+    @include card-before(507px, -73px);
+  }
+
+  &__card-send {
+    float: right;
+    margin-bottom: 112px;
+    @include card-before(-72px, 300px);
+  }
+
+  &__card-bay {
+    float: right;
+    @include card-before(430px, 295px);
+  }
+}
+
+.desktop {
+  display: flex;
+}
+
+.mobile {
+  display: none;
+}
+
+@include breakpoint($horizontal-tablet) {
+  .services {
+    padding: 0 20px 40px;
+    flex-direction: column;
+
+    &__left-column,
+    &__right-column {
+      width: 100%;
+      @include flex-center;
+      flex-direction: column;
+    }
+
+    &__title {
+      margin: 40px 0 20px;
+      min-width: 100%;
+      text-align: center;
+    }
+
+    &__card-send,
+    &__card-bay,
+    &__card-receive {
+      margin: 20px auto;
+    }
+
+    &__card-send {
+      margin-top: 0;
+    }
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+}
+
+@include breakpoint($horizontal-mobile) {
+  .services {
+    padding: 0 6px 20px;
+    &__row {
+      padding-top: 8px;
+    }
+    
+    &__card-send {
+      margin-top: 20px;
+    }
+
+    &__title {
+      margin-top: 10px;
+      text-align: left;
+      letter-spacing: 2px;
+    }
+  }
+}

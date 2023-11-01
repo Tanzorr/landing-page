@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: max-content;
+  border-radius: 10px;
+  padding: 24px 37px 50px 50px;
+  box-shadow: 5px 20px 50px 0 #cc552080;
+  background: $primary-background-color;
+  position: relative;
+
+  &__image {
+    width: 245px;
+    align-self: end;
+  }
+
+  &__title {
+    margin-top: -40px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+  }
+
+  &__learn-more {
+    color: #cc5520;
+    font-size: 14px;
+    line-height: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@include breakpoint($horizontal-tablet) {
+  .card {
+    width: 350px;
+    padding: 12px 37px 40px 50px;
+  }
+}
+
+@include breakpoint($horizontal-mobile) {
+  .card {
+    &__image {
+      width: 230px;
+    }
+
+    &__description {
+      margin-bottom: 45px;
+    }
+  }
+}

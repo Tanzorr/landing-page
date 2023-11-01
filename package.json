@@ -1,0 +1,23 @@
+{
+  "name": "task-1-8",
+  "version": "1.0.0",
+  "description": "Lending page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass style.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.foxminded.ua:foxstudent105672/task-1-8.git"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "prettier": "3.0.2"
+  },
+  "keywords": [
+    "Lending"
+  ],
+  "author": "Olexandr Tukhovskyi",
+  "license": "ISC"
+}

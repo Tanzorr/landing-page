@@ -1,0 +1,77 @@
+.works {
+  padding: 95px 0;
+  background: $secondary-background-color;
+  color: $primary-background-color;
+
+  &__row {
+    justify-content: center;
+    gap: 125px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 85px;
+  }
+
+  &__item {
+    display: flex;
+    width: 230px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    &-title,
+    &-text {
+      text-align: center;
+    }
+
+    &-text {
+      padding: 0 4px;
+      line-height: 26px;
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  .works {
+    padding: 60px 0;
+
+    &__row {
+      gap: 0;
+      justify-content: space-around;
+      width: 100%;
+      padding-left: 0;
+    }
+
+    &__title {
+      margin-bottom: 50px;
+      margin-right: 0;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+@include breakpoint($horizontal-mobile) {
+  .works {
+    padding: 57px 0;
+
+    &__title {
+      margin-bottom: 54px;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 54px;
+      }
+
+      &-title {
+        font-weight: 600;
+      }
+    }
+  }
+}

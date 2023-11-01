@@ -1,0 +1,186 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  padding-top: 150px;
+  padding-bottom: 123px;
+  position: relative;
+
+  &__row {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__fox-column {
+    width: 550px;
+  }
+
+  &__fox-image {
+    width: 410px;
+    height: max-content;
+  }
+
+  &__carousel-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 440px;
+  }
+
+  &__mobile-image-column {
+    display: flex;
+  }
+
+  &__download-column {
+    margin-bottom: 10px;
+    width: 510px;
+  }
+
+  &__fox-bg {
+    position: absolute;
+    width: 50%;
+    height: 400px;
+    left: 0;
+    top: 310px;
+    background: #ffe9d0;
+    z-index: -5;
+  }
+
+  &__title {
+    margin-bottom: 170px;
+    width: 100%;
+    text-align: center;
+    padding-left: 30px;
+  }
+
+  &__mobile-title {
+    display: none;
+  }
+
+  &__mobile-image {
+    width: 516px;
+  }
+
+  &__carousel {
+    @include card-before(0, 100%);
+    max-width: 418px;
+  }
+}
+
+@include breakpoint(1324px) {
+  .reviews {
+    &__carousel {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  .reviews {
+    gap: 60px;
+
+    &__row {
+      padding: 0 20px;
+    }
+
+    &__fox-column,
+    &__carousel-column,
+    &__mobile-image-column,
+    &__download-column {
+      width: 50%;
+    }
+  }
+}
+
+@include breakpoint($horizontal-tablet) {
+  .reviews {
+    padding: 50px 0 40px;
+    
+    &__fox-bg {
+      min-width: 0;
+      width: 47%;
+      height: 300px;
+      top: 230px;
+    }
+  }
+}
+
+@include breakpoint($tablet) {
+  .reviews {
+    gap: 40px;
+
+    &__row {
+      flex-direction: column;
+    }
+
+    &__fox-column,
+    &__carousel-column,
+    &__mobile-image-column,
+    &__download-column {
+      width: 100%;
+    }
+
+    &__mobile-image-column {
+      justify-content: center;
+    }
+
+    &__fox-column {
+      align-items: center;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__mobile-title {
+      display: block;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+    &__fox-bg {
+      width: 100%;
+    }
+
+    &__carousel {
+      max-width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+@include breakpoint($horizontal-mobile) {
+  .reviews {
+    gap: 20px;
+
+    &__row {
+      padding: 0 4px;
+    }
+
+    &__carousel {
+      margin-top: 60px;
+    }
+
+    &__fox-bg {
+      height: 210px;
+      top: 190px;
+    }
+
+    &__fox-image {
+      width: 235px;
+      flex-shrink: 0;
+    }
+
+    &__mobile-image {
+      width: 379px;
+      margin: 46px 0 22px;
+    }
+
+    &__column {
+      gap: 22px;
+    }
+  }
+}

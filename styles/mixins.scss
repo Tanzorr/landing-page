@@ -1,0 +1,29 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-before($top, $left) {
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 153px;
+    height: 153px;
+    background-image: url("../img/backgroid-dots.png");
+    background-repeat: no-repeat;
+    top: $top;
+    left: $left;
+
+    @include breakpoint($desktop) {
+      display: none;
+    }
+  }
+}
+
+@mixin breakpoint($point) {
+  @media (max-width: $point) {
+    @content;
+  }
+}
